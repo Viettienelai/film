@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phim: Hố Đen Tử Thần</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        img {
+            max-width: 100%;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="movie-title"></h1>
+        <img id="poster" src="" alt="Poster phim">
+        <p><strong>Thời lượng:</strong> <span id="time"></span></p>
+        <p><strong>Chất lượng:</strong> <span id="quality"></span></p>
+        <p><strong>Ngôn ngữ:</strong> <span id="language"></span></p>
+        <p><strong>Đạo diễn:</strong> <span id="director"></span></p>
+        <p><strong>Diễn viên:</strong> <span id="casts"></span></p>
+        <p><strong>Mô tả:</strong> <span id="description"></span></p>
+
+        <h2>Xem phim</h2>
+        <iframe id="video-frame" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        // Dữ liệu API
+        const apiData = {
+            "status": "success",
+            "movie": {
+                "name": "Hố Đen Tử Thần",
+                "original_name": "Interstellar",
+                "thumb_url": "https://phim.nguonc.com/public/images/Film/rct7HdAfPyvSqbr4H86b6z10tCE.jpg",
+                "poster_url": "https://phim.nguonc.com/public/images/Film/xJHokMbljvjADYdit5fK5VQsXEG.jpg",
+                "description": "Interstellar nói về chuyến hành trình đi tìm một hành tinh mới...",
+                "time": "169 phút",
+                "quality": "HD",
+                "language": "Vietsub",
+                "director": "Christopher Nolan",
+                "casts": "Matthew McConaughey, Anne Hathaway, Michael Caine",
+                "episodes": [
+                    {
+                        "server_name": "Vietsub #1",
+                        "items": [
+                            {
+                                "embed": "https://embed3.streamc.xyz/embed.php?hash=62a145f35b19a07896f37fee66ab3fed"
+                            }
+                        ]
+                    }
+                ]
+            }
+        };
+
+        // Hiển thị thông tin phim
+        document.getElementById("movie-title").innerText = apiData.movie.name;
+        document.getElementById("poster").src = apiData.movie.poster_url;
+        document.getElementById("time").innerText = apiData.movie.time;
+        document.getElementById("quality").innerText = apiData.movie.quality;
+        document.getElementById("language").innerText = apiData.movie.language;
+        document.getElementById("director").innerText = apiData.movie.director;
+        document.getElementById("casts").innerText = apiData.movie.casts;
+        document.getElementById("description").innerText = apiData.movie.description;
+
+        // Nhúng link video
+        document.getElementById("video-frame").src = apiData.movie.episodes[0].items[0].embed;
+    </script>
+</body>
+</html>
