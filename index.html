@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <link rel="icon" type="image/png" href="film.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phim Mới</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="top-container">
+            <div class="logo" onclick="goToHome()">Vtkjbtlvkh</div>
+            <div class="search-box">
+                <button onclick="searchMovies()"><i class="fas fa-search"></i></button>
+                <input type="text" id="searchInput" placeholder="Tìm kiếm phim..." onkeypress="if(event.key === 'Enter') searchMovies()">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="movieList">
+            <h2 id="movieListTitle">Phim Mới Cập Nhật</h2>
+            <div id="movieContainer"></div>
+        </div>
+        <div id="movieDetail" style="display: none;">
+            <button class="back-button" onclick="goBack()"><i class="fas fa-arrow-left"></i> Quay lại</button>
+            <div class="movie-header">
+                <div id="movieInfo">
+                    <div class="poster-container">
+                        <img src="" alt="">
+                    </div>
+                    <div class="details-container">
+                        <h1></h1>
+                        <div class="detail-item"><i class="fas fa-film"></i><span><span class="label">Tên gốc:</span> <span class="value"></span></span></div>
+                        <div class="detail-item"><i class="fas fa-list-ul"></i><span><span class="label">Định dạng:</span> <span class="value"></span></span></div>
+                        <div class="detail-item"><i class="fas fa-tags"></i><span><span class="label">Thể loại:</span> <span class="value"></span></span></div>
+                        <div class="detail-item"><i class="fas fa-globe"></i><span><span class="label">Quốc gia:</span> <span class="value"></span></span></div>
+                        <div class="detail-item"><i class="fas fa-calendar-alt"></i><span><span class="label">Năm:</span> <span class="value"></span></span></div>
+                        <div class="detail-item"><i class="fas fa-list-ol"></i><span><span class="label">Tập hiện tại:</span> <span class="value"></span></span></div>
+                        <div class="detail-item"><i class="fas fa-clock"></i><span><span class="label">Thời lượng:</span> <span class="value"></span></span></div>
+                        <div class="detail-item"><i class="fas fa-star"></i><span><span class="label">Chất lượng:</span> <span class="value"></span></span></div>
+                        <div class="detail-item"><i class="fas fa-language"></i><span><span class="label">Ngôn ngữ:</span> <span class="value"></span></span></div>
+                        <div class="detail-item"><i class="fas fa-user-tie"></i><span><span class="label">Đạo diễn:</span> <span class="value"></span></span></div>
+                        <div class="detail-item"><i class="fas fa-users"></i><span><span class="label">Diễn viên:</span> <span class="value"></span></span></div>
+                    </div>
+                </div>
+                <div class="description"></div>
+            </div>
+            <div id="episodeList"></div>
+            <div id="videoPlayer">
+                <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
