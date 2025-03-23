@@ -1,105 +1,136 @@
 /* Áp dụng cho toàn bộ trang */
 * {
-    caret-color: transparent; /* Ẩn con trỏ nháy */
-    user-select: text; /* Vẫn cho phép chọn văn bản để copy */
+    caret-color: transparent;
+    /* Ẩn con trỏ nháy */
+    user-select: text;
+    /* Vẫn cho phép chọn văn bản để copy */
 }
 
 /* Loại trừ input để vẫn hiển thị con trỏ nháy khi nhập */
 input {
-    caret-color: auto; /* Hiển thị con trỏ nháy trong input */
+    caret-color: auto;
+    /* Hiển thị con trỏ nháy trong input */
 }
 
 /* Loại trừ các phần tử không cần chọn văn bản (như button) */
-button, .episode-box, .film-container {
-    user-select: none; /* Không cho phép chọn văn bản trong các phần tử này */
+button,
+.episode-box,
+.film-container {
+    user-select: none;
+    /* Không cho phép chọn văn bản trong các phần tử này */
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #1C2526; /* Màu nền đen tối - giữ nguyên */
+    background-color: #1C2526;
+    /* Màu nền đen tối - giữ nguyên */
     color: white;
 }
 
 header {
-    background-color: #2A2F30; /* Màu nền header xám đen - giữ nguyên */
-    padding: 15px 0;
+    background-color: #2A2F30;
+    /* Màu nền header xám đen - giữ nguyên */
+    padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .top-container {
+    border: 1px solid green;
     display: flex;
-    justify-content: space-between; /* Khôi phục space-between để search-box ở bên phải */
+    justify-content: space-between;
+    /* Căn logo và search-box nằm hai bên */
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px 0 10px; /* Giảm padding-left từ 20px xuống 10px để logo dịch sang trái */
+    /* Căn giữa theo chiều dọc */
+    padding: 0 5%;
+    /* Thêm padding để các phần tử không sát lề */
+    flex-wrap: nowrap;
 }
 
 .logo {
     font-size: 28px;
     font-weight: bold;
-    color: #FF0000; /* Khôi phục màu đỏ ban đầu */
+    color: #FF0000;
+    /* Khôi phục màu đỏ ban đầu */
     cursor: pointer;
 }
 
 .logo:hover {
-    color: #ff9191; /* Khôi phục màu đỏ nhạt ban đầu */
+    color: #ff9191;
+    /* Khôi phục màu đỏ nhạt ban đầu */
 }
 
 .search-box {
     display: flex;
     align-items: center;
-    background-color: #4a4a4a; /* Màu nền cho toàn bộ khối - giữ nguyên */
-    border-radius: 50px; /* Border-radius cho toàn bộ khối */
-    overflow: hidden; /* Đảm bảo border-radius áp dụng đúng */
+    background-color: #4a4a4a;
+    /* Màu nền cho toàn bộ khối - giữ nguyên */
+    border-radius: 50px;
+    /* Border-radius cho toàn bộ khối */
+    overflow: hidden;
+    /* Đảm bảo border-radius áp dụng đúng */
 }
 
 .search-box button {
-    height: 40px; /* Chiều cao cố định */
-    width: 40px; /* Chiều rộng cố định để vừa biểu tượng */
-    background-color: transparent; /* Bỏ màu nền của button */
+    height: 40px;
+    /* Chiều cao cố định */
+    width: 40px;
+    /* Chiều rộng cố định để vừa biểu tượng */
+    background-color: transparent;
+    /* Bỏ màu nền của button */
     border: none;
     color: white;
-    font-size: 16px; /* Kích thước biểu tượng kính lúp */
+    font-size: 16px;
+    /* Kích thước biểu tượng kính lúp */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50px 50px 50px 50px; /* Border-radius bên trái */
+    border-radius: 50px 50px 50px 50px;
+    /* Border-radius bên trái */
 }
 
 .search-box button:hover {
-    background-color: #FF0000; /* Khôi phục màu đỏ ban đầu */
+    background-color: #FF0000;
+    /* Khôi phục màu đỏ ban đầu */
 }
 
 .search-box input {
-    height: 40px; /* Chiều cao cố định, bằng với button */
-    width: 300px; /* Chiều dài gấp rưỡi 200px, làm tròn thành 300px */
-    padding: 0 10px; /* Padding trái-phải để text không sát lề */
+    height: 40px;
+    /* Chiều cao cố định, bằng với button */
+    padding: 0 10px;
+    /* Padding trái-phải để text không sát lề */
     font-size: 16px;
-    background-color: transparent; /* Bỏ màu nền của input */
+    background-color: transparent;
+    /* Bỏ màu nền của input */
     border: none;
-    border-radius: 0 50px 50px 0; /* Border-radius bên phải */
-    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
-    color: white; /* Chữ trong input màu trắng */
+    border-radius: 0 50px 50px 0;
+    /* Border-radius bên phải */
+    box-sizing: border-box;
+    /* Đảm bảo padding không làm tăng kích thước */
+    color: white;
+    /* Chữ trong input màu trắng */
 }
 
 .search-box input::placeholder {
-    color: #B0B0B0; /* Màu placeholder nhạt để dễ đọc - giữ nguyên */
+    color: #B0B0B0;
+    /* Màu placeholder nhạt để dễ đọc - giữ nguyên */
 }
 
 .search-box input:focus {
-    outline: none; /* Bỏ viền mặc định khi focus */
+    outline: none;
+    /* Bỏ viền mặc định khi focus */
 }
 
 main {
     max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
+    margin: 0 auto; /* Đảm bảo main căn giữa và không có khoảng cách hai bên */
+    padding: 0; /* Bỏ padding để không có khoảng cách */
+    width: 100%; /* Đảm bảo main chiếm toàn bộ chiều rộng */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
 }
 
 h2 {
@@ -112,15 +143,18 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
+
 }
 
 .film-container {
-    background-color: transparent; /* Bỏ màu nền của container - giữ nguyên */
+    background-color: transparent;
+    /* Bỏ màu nền của container - giữ nguyên */
     height: 310px;
     border-radius: 5px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.2s;
+
 }
 
 .film-container:hover {
@@ -131,45 +165,62 @@ h2 {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    border-radius: 5px; /* Giữ bo góc cho hình ảnh */
+    border-radius: 5px;
+    /* Giữ bo góc cho hình ảnh */
 }
 
 .film-info {
-    padding: 10px 0; /* Chỉ giữ padding trên-dưới, bỏ padding trái-phải */
-    text-align: center; /* Căn giữa thay vì căn trái */
-    background-color: transparent; /* Bỏ màu nền của .film-info - giữ nguyên */
+    padding: 10px 0;
+    /* Chỉ giữ padding trên-dưới, bỏ padding trái-phải */
+    text-align: center;
+    /* Căn giữa thay vì căn trái */
+    background-color: transparent;
+    /* Bỏ màu nền của .film-info - giữ nguyên */
 }
 
 .film-info h3 {
     margin: 0;
     font-size: 15px;
     color: rgb(227, 227, 227);
-    overflow: hidden; /* Ẩn phần vượt quá */
-    text-overflow: ellipsis; /* Thêm dấu ... nếu tên quá dài */
+    overflow: hidden;
+    /* Ẩn phần vượt quá */
+    text-overflow: ellipsis;
+    /* Thêm dấu ... nếu tên quá dài */
 }
 
 .film-info p {
     margin: 5px 0 0;
-    color: #dfdfdf; /* Màu xám nhạt - giữ nguyên */
+    color: #dfdfdf;
+    /* Màu xám nhạt - giữ nguyên */
     font-size: 13px;
 }
 
 /* Chi tiết phim */
 #movieDetail {
-    width: 1150px;
+    width: 100%; /* Đảm bảo movieDetail chiếm toàn bộ chiều rộng */
     padding: 20px;
-    background-color: #2A2F30; /* Màu nền xám đen - giữ nguyên */
+    background-color: #2A2F30;
+    /* Màu nền xám đen - giữ nguyên */
     border-radius: 5px;
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
 }
 
 /* Phần bao bọc #movieInfo và .description */
 .movie-header {
-    position: relative; /* Để overlay và ảnh nền hoạt động đúng */
-    background-size: cover; /* Ảnh nền bao phủ toàn bộ */
-    background-position: center; /* Căn giữa ảnh nền */
-    background-repeat: no-repeat; /* Không lặp lại ảnh */
-    padding: 20px; /* Thêm padding để nội dung không sát lề */
-    border-radius: 5px; /* Bo góc cho .movie-header */
+    position: relative;
+    /* Để overlay và ảnh nền hoạt động đúng */
+    background-size: cover;
+    /* Ảnh nền bao phủ toàn bộ */
+    background-position: center;
+    /* Căn giữa ảnh nền */
+    background-repeat: no-repeat;
+    /* Không lặp lại ảnh */
+    padding: 20px;
+    /* Thêm padding để nội dung không sát lề */
+    border-radius: 5px;
+    /* Bo góc cho .movie-header */
+    width: 100%; /* Đảm bảo .movie-header chiếm toàn bộ chiều rộng */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
 }
 
 /* Lớp overlay màu đen tối */
@@ -180,22 +231,27 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Lớp màu đen tối với độ trong suốt 0.7 - giữ nguyên */
-    z-index: 1; /* Đặt overlay phía trên ảnh nền nhưng dưới nội dung */
-    border-radius: 5px; /* Giữ bo góc như .movie-header */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Lớp màu đen tối với độ trong suốt 0.7 - giữ nguyên */
+    z-index: 1;
+    /* Đặt overlay phía trên ảnh nền nhưng dưới nội dung */
+    border-radius: 5px;
+    /* Giữ bo góc như .movie-header */
 }
 
 /* Đảm bảo nội dung bên trong .movie-header nằm trên overlay */
-.movie-header > * {
+.movie-header>* {
     position: relative;
-    z-index: 2; /* Nội dung (#movieInfo, .description) nằm trên overlay */
+    z-index: 2;
+    /* Nội dung (#movieInfo, .description) nằm trên overlay */
 }
 
 .back-button {
     display: inline-flex;
     align-items: center;
     padding: 10px 20px;
-    background-color: #FF0000; /* Khôi phục màu đỏ ban đầu */
+    background-color: #FF0000;
+    /* Khôi phục màu đỏ ban đầu */
     color: white;
     border: none;
     border-radius: 5px;
@@ -208,32 +264,41 @@ h2 {
 }
 
 .back-button:hover {
-    background-color: #CC0000; /* Khôi phục màu đỏ đậm ban đầu */
+    background-color: #CC0000;
+    /* Khôi phục màu đỏ đậm ban đầu */
 }
 
 #movieInfo {
     display: flex;
-    flex-direction: row; /* Ảnh và chi tiết nằm cạnh nhau */
+    flex-direction: row;
+    /* Ảnh và chi tiết nằm cạnh nhau */
     width: 100%; /* Đảm bảo #movieInfo chiếm toàn bộ chiều rộng của .movie-header */
     margin-bottom: 20px; /* Thêm khoảng cách dưới để tách biệt với mô tả */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
 }
 
 #movieInfo .poster-container {
-    margin-right: 40px; /* Khoảng cách giữa ảnh và chi tiết */
-    width: 300px; /* Chiều rộng cố định */
-    aspect-ratio: 2 / 3; /* Tỷ lệ 2:3, phù hợp với ảnh dọc */
-    overflow: hidden; /* Ẩn phần thừa nếu ảnh không khớp */
+    margin-right: 40px;
+    /* Khoảng cách giữa ảnh và chi tiết */
+    width: 300px;
+    /* Chiều rộng cố định */
+    aspect-ratio: 2 / 3;
+    /* Tỷ lệ 2:3, phù hợp với ảnh dọc */
+    overflow: hidden;
+    /* Ẩn phần thừa nếu ảnh không khớp */
 }
 
 #movieInfo img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Đảm bảo ảnh lấp đầy khung */
+    object-fit: cover;
+    /* Đảm bảo ảnh lấp đầy khung */
     border-radius: 10px;
 }
 
 #movieInfo .details-container {
-    flex: 1; /* Chi tiết chiếm phần còn lại */
+    flex: 1;
+    /* Chi tiết chiếm phần còn lại */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -241,10 +306,12 @@ h2 {
 }
 
 #movieInfo h1 {
-    font-size: 36px; /* Kích thước tên phim */
+    font-size: 36px;
+    /* Kích thước tên phim */
     font-weight: bold;
     margin: 0;
-    color: #FF0000; /* Khôi phục màu đỏ ban đầu */
+    color: #FF0000;
+    /* Khôi phục màu đỏ ban đầu */
 }
 
 #movieInfo .detail-item {
@@ -252,27 +319,33 @@ h2 {
     width: 700px;
     align-items: center;
     gap: 8px;
-    color: #e8e8e8; /* Đổi từ #B0B0B0 (xám nhạt) thành #ffffff (trắng) */
+    color: #e8e8e8;
+    /* Đổi từ #B0B0B0 (xám nhạt) thành #ffffff (trắng) */
     font-size: 15px;
 }
 
 #movieInfo .detail-item i {
-    color: #FF0000; /* Khôi phục màu đỏ ban đầu */
+    color: #FF0000;
+    /* Khôi phục màu đỏ ban đầu */
     font-size: 17px;
 }
 
 #movieInfo .detail-item .label {
-    font-weight: bold; /* In đậm phần nhãn */
+    font-weight: bold;
+    /* In đậm phần nhãn */
 }
 
 #movieInfo .detail-item .value {
-    font-weight: normal; /* Giữ phần giá trị không in đậm */
+    font-weight: normal;
+    /* Giữ phần giá trị không in đậm */
 }
 
 .description {
     width: 100%;
-    margin-top: 20px; /* Khoảng cách trên để tách biệt với phần trên */
-    color: #dbdbdb; /* Màu xám nhạt - giữ nguyên */
+    margin-top: 20px;
+    /* Khoảng cách trên để tách biệt với phần trên */
+    color: #dbdbdb;
+    /* Màu xám nhạt - giữ nguyên */
 }
 
 #episodeList {
@@ -283,15 +356,11 @@ h2 {
     max-width: 100%;
 }
 
-@media (min-width: 900px) {
-    #episodeList {
-        grid-template-columns: repeat(10, 1fr); /* Tối đa 10 tập trên 1 hàng */
-    }
-}
 
 .episode-box {
     padding: 10px;
-    background-color: #FF0000; /* Khôi phục màu đỏ ban đầu */
+    background-color: #FF0000;
+    /* Khôi phục màu đỏ ban đầu */
     color: white;
     border-radius: 10px;
     cursor: pointer;
@@ -300,22 +369,340 @@ h2 {
 }
 
 .episode-box:hover {
-    background-color: #CC0000; /* Khôi phục màu đỏ đậm ban đầu */
+    background-color: #CC0000;
+    /* Khôi phục màu đỏ đậm ban đầu */
     scale: 1.05;
 }
 
 .episode-box.active-episode {
-    background-color: #666; /* Màu xám cho tập đang phát - giữ nguyên */
+    background-color: #666;
+    /* Màu xám cho tập đang phát - giữ nguyên */
     color: #ccc;
 }
 
 .episode-box.active-episode:hover {
-    background-color: #555; /* Màu xám đậm hơn khi hover - giữ nguyên */
+    background-color: #555;
+    /* Màu xám đậm hơn khi hover - giữ nguyên */
     scale: 1.05;
 }
 
 #videoPlayer iframe {
-    width: 100%;
-    height: 650px;
+    left: 50%;
+    transform: translateX(5%);
+    width: 90%;
+    aspect-ratio: 16 / 9;
     border-radius: 10px;
+}
+
+
+
+
+
+@media (max-width: 700px) {
+    header {
+        width: 100%;
+        background-color: #2A2F30;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .top-container {
+        display: flex;
+        justify-content: space-between;
+        /* Căn logo và search-box nằm hai bên */
+        align-items: center;
+        /* Căn giữa theo chiều dọc */
+        padding: 0 5%;
+        /* Thêm padding để các phần tử không sát lề */
+        flex-wrap: nowrap;
+    }
+
+    .logo {
+        font-size: 35px;
+        font-weight: bold;
+        color: #FF0000;
+        cursor: pointer;
+    }
+
+    .logo:hover {
+        color: #ff9191;
+    }
+
+    .search-box {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        background-color: #4a4a4a;
+        border-radius: 50px;
+        overflow: hidden; /* Ngăn các phần tử con tràn ra ngoài */
+    }
+    
+    .search-box button {
+        flex-shrink: 0; /* Ngăn button bị co nhỏ */
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+    }
+    .search-box button:hover {
+        background-color: #FF0000;
+        /* Khôi phục màu đỏ ban đầu */
+    }
+
+    .search-box input {
+        flex-grow: 1; /* Giúp input tự co dãn mà không lấn vào button */
+        min-width: 0; /* Ngăn input mở rộng quá mức */
+        height: 40px;
+        font-size: 16px;
+        background-color: transparent;
+        border: none;
+        color: white;
+    }
+    .search-box input::placeholder {
+        color: #B0B0B0;
+        /* Màu placeholder nhạt để dễ đọc - giữ nguyên */
+    }
+
+    .search-box input:focus {
+        outline: none;
+        /* Bỏ viền mặc định khi focus */
+    }
+
+    main {
+        width: 100%; /* Đảm bảo main chiếm toàn bộ chiều rộng */
+        padding: 0; /* Bỏ padding để không có khoảng cách */
+        box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
+    }
+
+    h2 {
+        color: white;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    #movieList {
+        width: 100%;
+    }
+    #movieContainer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+    }
+
+    .film-container {
+        background-color: transparent;
+        /* Bỏ màu nền của container - giữ nguyên */
+        height: 290px;
+        border-radius: 5px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.2s;
+
+    }
+
+    .film-container:hover {
+        transform: scale(1.1);
+    }
+
+    .film-container img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 5px;
+        /* Giữ bo góc cho hình ảnh */
+    }
+
+    .film-info {
+        padding: 10px 0;
+        /* Chỉ giữ padding trên-dưới, bỏ padding trái-phải */
+        text-align: center;
+        /* Căn giữa thay vì căn trái */
+        background-color: transparent;
+        /* Bỏ màu nền của .film-info - giữ nguyên */
+    }
+
+    .film-info h3 {
+        margin: 0;
+        font-size: 15px;
+        color: rgb(227, 227, 227);
+        overflow: hidden;
+        /* Ẩn phần vượt quá */
+        text-overflow: ellipsis;
+        /* Thêm dấu ... nếu tên quá dài */
+    }
+
+    .film-info p {
+        margin: 5px 0 0;
+        color: #dfdfdf;
+        /* Màu xám nhạt - giữ nguyên */
+        font-size: 13px;
+    }
+
+    /* Chi tiết phim */
+    #movieDetail {
+        width: 100%; /* Đảm bảo movieDetail chiếm toàn bộ chiều rộng */
+        padding: 20px;
+        background-color: #2A2F30;
+        /* Màu nền xám đen - giữ nguyên */
+        border-radius: 5px;
+        box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
+    }
+
+    /* Phần bao bọc #movieInfo và .description */
+    .movie-header {
+        position: relative;
+        /* Để overlay và ảnh nền hoạt động đúng */
+        background-size: cover;
+        /* Ảnh nền bao phủ toàn bộ */
+        background-position: center;
+        /* Căn giữa ảnh nền */
+        background-repeat: no-repeat;
+        /* Không lặp lại ảnh */
+        padding: 20px;
+        /* Thêm padding để nội dung không sát lề */
+        border-radius: 5px;
+        /* Bo góc cho .movie-header */
+        width: 100%; /* Đảm bảo .movie-header chiếm toàn bộ chiều rộng */
+        box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
+    }
+
+    /* Lớp overlay màu đen tối */
+    .movie-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        /* Lớp màu đen tối với độ trong suốt 0.7 - giữ nguyên */
+        z-index: 1;
+        /* Đặt overlay phía trên ảnh nền nhưng dưới nội dung */
+        border-radius: 5px;
+        /* Giữ bo góc như .movie-header */
+    }
+
+    /* Đảm bảo nội dung bên trong .movie-header nằm trên overlay */
+    .movie-header>* {
+        position: relative;
+        z-index: 2;
+        /* Nội dung (#movieInfo, .description) nằm trên overlay */
+    }
+
+    .back-button {
+        display: inline-flex;
+        align-items: center;
+        background-color: #FF0000;
+        /* Khôi phục màu đỏ ban đầu */
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .back-button i {
+        margin-right: 8px;
+    }
+
+    .back-button:hover {
+        background-color: #CC0000;
+        scale: 1.1;
+    }
+
+    #movieInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #movieInfo .poster-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 300px;
+        aspect-ratio: 2 / 3;
+        overflow: hidden;
+        border: 1px solid green;
+    }
+
+    #movieInfo h1 {
+        width: calc(100% - 40px); /* Bù trừ cho padding 20px trái + 20px phải của .movie-header */
+        max-width: calc(100% - 40px);
+        font-size: 30px;
+        font-weight: bold;
+        padding: 0;
+        margin: 10px 0;
+        color: #FF0000;
+        border: 1px solid blue;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    #movieInfo .details-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+        max-width: 100%;
+        border: 1px solid blue;
+        box-sizing: border-box;
+    }
+
+    .description {
+        width: 100%;
+        margin-top: 20px;
+        color: #dbdbdb;
+    }
+
+    #episodeList {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 10px;
+        margin: 40px 0;
+        max-width: 100%;
+    }
+
+    .episode-box {
+        padding: 10px;
+        background-color: #FF0000;
+        /* Khôi phục màu đỏ ban đầu */
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        user-select: none;
+        text-align: center;
+    }
+
+    .episode-box:hover {
+        background-color: #CC0000;
+        /* Khôi phục màu đỏ đậm ban đầu */
+        scale: 1.05;
+    }
+
+    .episode-box.active-episode {
+        background-color: #666;
+        /* Màu xám cho tập đang phát - giữ nguyên */
+        color: #ccc;
+    }
+
+    .episode-box.active-episode:hover {
+        background-color: #555;
+        /* Màu xám đậm hơn khi hover - giữ nguyên */
+        scale: 1.05;
+    }
+
+    #videoPlayer iframe {
+        width: 90%;
+        aspect-ratio: 16 / 9;
+        border-radius: 10px;
+    }
 }
