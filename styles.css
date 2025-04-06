@@ -39,7 +39,6 @@ header {
 }
 
 .top-container {
-    border: 1px solid green;
     display: flex;
     justify-content: space-between;
     /* Căn logo và search-box nằm hai bên */
@@ -631,7 +630,6 @@ h2 {
         max-width: 300px;
         aspect-ratio: 2 / 3;
         overflow: hidden;
-        border: 1px solid green;
     }
 
     #movieInfo h1 {
@@ -642,7 +640,6 @@ h2 {
         padding: 0;
         margin: 10px 0;
         color: #FF0000;
-        border: 1px solid blue;
         word-wrap: break-word;
         overflow-wrap: break-word;
     }
@@ -653,7 +650,6 @@ h2 {
         gap: 20px;
         width: 100%;
         max-width: 100%;
-        border: 1px solid blue;
         box-sizing: border-box;
     }
 
