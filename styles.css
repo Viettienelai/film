@@ -164,8 +164,6 @@ h2 {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    border-radius: 5px;
-    /* Giữ bo góc cho hình ảnh */
 }
 
 .film-info {
